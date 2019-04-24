@@ -8,7 +8,7 @@ const Route = use('Route')
 
 Route.resource('users', 'UserController')
   .apiOnly()
-  .validator('UserValidator');
+  .validator(new Map([[['users.store', 'users.update'],['UserValidator']]]));
 Route.resource('books', 'BookController')
   .apiOnly()
   .validator(new Map([[['books.store', 'books.update'],['BookValidator']]]));
