@@ -13,4 +13,5 @@ Route.resource('books', 'BookController')
   .apiOnly()
   .validator(new Map([[['books.store', 'books.update'],['BookValidator']]]));
 Route.resource('authors', 'AuthorController')
-  .apiOnly();
+  .apiOnly()
+  .validator(new Map([[['authors.store', 'authors.update'],['AuthorValidator']]]));
