@@ -1,6 +1,11 @@
 'use strict'
 
 class AuthorValidator {
+  get sanitizationRules () {
+    return {
+      birthday: 'date'
+    }
+  }
   get rules () {
     return {
       firstName: 'required|string',

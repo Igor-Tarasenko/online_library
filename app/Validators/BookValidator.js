@@ -1,6 +1,12 @@
 'use strict'
 
 class BookValidator {
+  get sanitizationRules () {
+    return {
+      published_at: 'date',
+      user_id: 'to_null'
+    }
+  }
   get rules () {
     return {
       name: 'required',
