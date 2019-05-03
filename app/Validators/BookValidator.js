@@ -3,15 +3,15 @@
 class BookValidator {
   get sanitizationRules () {
     return {
-      published_at: 'date',
-      user_id: 'to_null'
+      published_at: 'date|trim|strip_tags',
+      user_id: 'to_int|trim|strip_tags'
     }
   }
   get rules () {
     return {
-      name: 'required',
-      published_at: 'required|date',
-      user_id: 'integer'
+      name: 'required|max:255',
+      published_at: 'required|date|max:255',
+      user_id: 'integer|max:255'
     }
   }
   get validateAll () {

@@ -3,14 +3,14 @@
 class AuthorValidator {
   get sanitizationRules () {
     return {
-      birthday: 'date'
+      birthday: 'date|trim|strip_tags'
     }
   }
   get rules () {
     return {
-      firstName: 'required|string',
-      lastName: 'required|string',
-      birthday: 'required|date'
+      firstName: 'required|string|max:255',
+      lastName: 'required|string|max:255',
+      birthday: 'required|date|max:255'
     }
   }
   get validateAll () {

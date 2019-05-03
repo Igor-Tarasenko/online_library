@@ -3,15 +3,15 @@
 class UserValidator {
   get sanitizationRules () {
     return {
-      email: 'normalize_email',
-      registration_date: 'date'
+      email: 'normalize_email|trim|strip_tags',
+      registration_date: 'date|trim|strip_tags'
     }
   }
   get rules () {
     return {
-      name: 'required',
-      email: 'required|email|unique:users',
-      password: 'required'
+      name: 'required|max:255',
+      email: 'required|email|unique:users|max:255',
+      password: 'required|max:255'
     }
   }
   get validateAll () {
