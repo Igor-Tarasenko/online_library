@@ -1,5 +1,6 @@
 'use strict'
 const Author = use('App/Models/Author');
+const { validateAll } = use('Validator');
 
 class AuthorController {
   constructor () {

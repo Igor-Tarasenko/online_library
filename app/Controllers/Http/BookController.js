@@ -1,6 +1,6 @@
 'use strict'
 const Book = use('App/Models/Book');
-const { validate } = use('Validator');
+const { validateAll } = use('Validator');
 
 class BookController {
   constructor () {
